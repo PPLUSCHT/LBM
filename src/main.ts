@@ -172,7 +172,7 @@ window.onload = async () => {
 
 window.onunhandledrejection = function(event){
   console.log(`wasdasfdsf`);
-  if(event.reason.toString().includes("Unreachable") || event.reason.toString().includes("unreachable")){
+  if(!event.reason.toString().includes("don't mind me")){
     _runner.setInvalid()
   }
 }
