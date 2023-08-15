@@ -127,7 +127,7 @@ export class Runner{
 const SLIDE_COUNT = 7
 
 export const startingState = {
-  resolution: Resolution.FHD,
+  resolution: Resolution.NHD,
   clickType: ClickType.Draw,
   summary: SummaryStat.Curl,
   computationSpeed: 15,
