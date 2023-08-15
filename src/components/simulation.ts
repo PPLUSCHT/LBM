@@ -61,7 +61,7 @@ export class Simulation extends App{
     private initCollapsedButtons(): HTMLDivElement{
       let container = document.createElement("div")
       container.className = "settings-buttons"
-      container.appendChild(this.createSVGButton("/vite.svg","settings", () => this.expansionButtonHandler()))
+      container.appendChild(this.createSVGButton("./public/vite.svg","settings", () => this.expansionButtonHandler()))
       container.appendChild(this.createSVGButton("./assets/home.svg","settings", () => this.runner.returnHome()))
       return container;
     }
