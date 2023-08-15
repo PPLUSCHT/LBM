@@ -5,3 +5,4 @@ Welcome! This simulator uses WebAssembly and WGPU to run a fast physics simulati
 
 
 **If you see an empty screen with menu buttons, your browser is likely not compatible with web gpu
+**This website was tested with an M1 Apple chip/gpu. On older devices, performance may be poor
