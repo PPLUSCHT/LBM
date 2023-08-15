@@ -69,7 +69,7 @@ export class Simulation extends App{
     private initPanel(state: State): HTMLDivElement{
       let panel = document.createElement("div")
       panel.className = "panel"
-      panel.appendChild(this.createSVGButton(".src/assets/close.svg", "collapse", () => this.expansionButtonHandler()))
+      panel.appendChild(this.createSVGButton("LBM/src/assets/close.svg", "collapse", () => this.expansionButtonHandler()))
       panel.appendChild(this.createLabeledRow("Color Map", "dropdown-row", this.initColorMapSelector(state.color)))
       panel.appendChild(this.createLabeledRow("Draw Type", "dropdown-row", this.initClickTypeSelector(state.clickType)))
       panel.appendChild(this.createLabeledRow("Output Data", "dropdown-row", this.initOutputSelector(state.summary)))
