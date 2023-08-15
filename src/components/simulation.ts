@@ -2,7 +2,7 @@ import init, {run, Resolution, WASMInteraction, ClickType, ColorMap, SummaryStat
 import { Runner, State } from '../main'
 import { App } from './app'
 
-import closeURL from '/close.svg'
+import closeURL from '/public/close.svg'
 
 export class Simulation extends App{
 
