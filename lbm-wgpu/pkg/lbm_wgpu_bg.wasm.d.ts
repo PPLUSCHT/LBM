@@ -16,7 +16,6 @@ export function wasminteraction_take_step(): void;
 export function wasminteraction_change_fluid_preset(a: number): void;
 export function wasminteraction_change_barrier_preset(a: number): void;
 export function run(a: number, b: number, c: number, d: number): void;
-export function test_compatibility(): number;
 export function __wbindgen_malloc(a: number, b: number): number;
 export function __wbindgen_realloc(a: number, b: number, c: number, d: number): number;
 export const __wbindgen_export_2: WebAssembly.Table;
@@ -26,4 +25,3 @@ export function _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen
 export function _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h385fb9ebf94aef22(a: number, b: number, c: number): void;
 export function _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h345b747b894e8bc3(a: number, b: number, c: number): void;
 export function __wbindgen_exn_store(a: number): void;
-export function wasm_bindgen__convert__closures__invoke2_mut__h64d77fdd1d030e8c(a: number, b: number, c: number, d: number): void;

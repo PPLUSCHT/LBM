@@ -263,3 +263,29 @@ span.right-arrow{
 div.color-container{
   display: flex;
 }
+
+div.invalid-device-container{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: aqua;
+}
+
+div.invalid-device-message{
+  width: 50vw;
+  background-color: black;
+  padding: 50px;
+  color: white;
+  border-radius: 30px;
+  margin-top: 100px;
+  margin-bottom: auto;
+}
+
+a{
+  color: aqua;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}

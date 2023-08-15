@@ -1,10 +1,9 @@
-import init, {Resolution, ClickType, ColorMap, SummaryStat} from '../lbm-wgpu/pkg'
-import test_compatibility from '../lbm-wgpu/pkg'
+import {Resolution, ClickType, ColorMap, SummaryStat} from '../lbm-wgpu/pkg'
 import { WelcomePage } from './components/welcome';
 import { Simulation } from './components/simulation';
 import { Tutorial } from './components/tutorial';
-import { App } from './components/app';
 import "./style.css"
+import { InvalidDevice } from './components/invalidDevice';
 
 export interface State{
   resolution: Resolution,
@@ -21,7 +20,8 @@ export interface State{
 export enum Phase{
   Tutorial,
   Simulation, 
-  Welcome
+  Welcome, 
+  invalidDevice
 }
 
 export interface CurrentLocation{
@@ -94,7 +94,17 @@ export class Runner{
     location.reload()
   }
 
-  createApp(location: CurrentLocation): App{
+  setInvalid(): void{
+    let current: CurrentLocation = {
+      phase: Phase.invalidDevice,
+      tutorialIndex: 0
+    }
+    sessionStorage.setItem("loaded", "true")
+    sessionStorage.setItem("currentLocation", JSON.stringify(current))
+    location.reload()
+  }
+
+  createApp(location: CurrentLocation){
     switch (location.phase){
       case Phase.Welcome:
         return new WelcomePage(this)
@@ -103,7 +113,13 @@ export class Runner{
         return new Simulation(this.state, this)
       case Phase.Tutorial:
         return new Tutorial(this, location.tutorialIndex)
+      case Phase.invalidDevice:
+        return new InvalidDevice(this)
     }
+  }
+
+  invalidDevice(){
+
   }
 
 }
@@ -144,23 +160,19 @@ function resizeRefresh(){
 
 window.onload = async () => {
   let loaded:boolean = sessionStorage.getItem("loaded") ?  true : false
+  console.log(`loaded: ${loaded}`)
   if (loaded == true){
     afterLoadCheck()
     resizeRefresh()
   } else{
-    try{
-      await init()
-      let t = await test_compatibility()
-      console.log(t)
-      if (!t){
-        alert("Your browser is incompatible with this website. Currently, only the newest versions of edge and chrome for desktop work with web gpu")
-      }else{
-        window.setTimeout(afterLoadCheck, 200)
-        window.setTimeout(resizeRefresh, 200)
-      }
-    }
-    catch{
-      alert("Your browser is incompatible with this website. Currently, only the newest versions of edge and chrome for desktop work with web gpu")
-    }
+      window.setTimeout(afterLoadCheck, 200)
+      window.setTimeout(resizeRefresh, 200)
+  }
+}
+
+window.onunhandledrejection = function(event){
+  console.log(`wasdasfdsf`);
+  if(event.reason.toString().includes("Unreachable")){
+    _runner.setInvalid()
   }
 }

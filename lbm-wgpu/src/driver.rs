@@ -41,21 +41,4 @@ impl Driver{
 
     return Driver{ size, surface, adapter, device, queue};
     }
-
-    pub async fn test_compatibility(window: &winit::window::Window) -> bool{
-        let size = window.inner_size();
-
-        let instance = wgpu::Instance::default();
-        let surface = unsafe { instance.create_surface(&window) }.unwrap();
-        let adapter = instance
-                .request_adapter(&wgpu::RequestAdapterOptions {
-                    power_preference: wgpu::PowerPreference::default(),
-                    force_fallback_adapter: false,
-                    // Request an adapter which can render to our surface
-                    compatible_surface: Some(&surface),
-                })
-                .await
-                .expect("Failed to find an appropriate adapter");
-        adapter.get_info().backend != wgpu::Backend::Empty 
-    }
 }

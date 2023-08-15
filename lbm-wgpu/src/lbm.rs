@@ -1393,7 +1393,6 @@ impl LBM{
         let mut blob = Blob::new_empty();
         let height = -1 * (self.y/4) as isize;
         let bottom = (self.y/2) as isize;
-        let left = (self.x/4) as isize;
         let space = (self.x/50) as isize;
         let mut current_x = (self.x/5) as isize;
         let letter_width = (self.x/13) as isize;
@@ -1509,7 +1508,7 @@ impl LBM{
             driver.queue.write_buffer(&self.data_buffers[1][i], 0, bytemuck::cast_slice(&data[i]));
         }
 
-        let mut encoder = driver.device.create_command_encoder(&wgpu::CommandEncoderDescriptor { label: None });
+        let encoder = driver.device.create_command_encoder(&wgpu::CommandEncoderDescriptor { label: None });
         self.compute_step = 0;
         self.frame_number = 0;
         driver.queue.submit(Some(encoder.finish()));

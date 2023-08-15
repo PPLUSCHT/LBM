@@ -575,12 +575,3 @@ pub fn run(pixel_ratio: f32, res: Resolution, width: u32, height: u32) {
     console::log_1(&"Hello from before run".into());
     wasm_bindgen_futures::spawn_local(run_wasm(event_loop, window, dimensions.0, dimensions.1, pixel_ratio * dimensions.2));
 }
-
-#[wasm_bindgen]
-pub async fn test_compatibility() -> bool{
-    let event_loop = EventLoop::new();
-    let window = winit::window::WindowBuilder::new()
-                        .with_inner_size(LogicalSize{width: 100.0 as f32, height: 100.0})
-                        .build(&event_loop).unwrap();
-    Driver::test_compatibility(&window).await
-}

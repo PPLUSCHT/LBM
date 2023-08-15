@@ -6,7 +6,8 @@ export class WelcomePage extends App{
 
     constructor(runner: Runner){
         super(runner)
-        init().then(() => {
+        init()
+        .then(() => {
             this.updateWASMState()
             this.initWelcomeButtons()
             run(window.devicePixelRatio, Resolution.HD, window.innerWidth, window.innerHeight)
@@ -39,6 +40,7 @@ export class WelcomePage extends App{
         buttonContainer.className = "welcome-button-container"
         buttonContainer.appendChild(this.createButton("Tutorial", () => this.startTutorial()))
         buttonContainer.appendChild(this.createButton("Simulator", () => this.close()))
+        buttonContainer.appendChild(this.createButton("Source Code", () => location.href = "https://github.com/PPLUSCHT/LBM"))
         document.body.appendChild(buttonContainer)
     }
 

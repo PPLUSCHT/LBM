@@ -1,0 +1,1 @@
+{"rustc":4041371938568725036,"features":"[\"std\"]","target":17263469766201294439,"profile":8987646332441898785,"path":5169304921665993500,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/bitflags-2c23485922337403/dep-lib-bitflags"}}],"rustflags":["--cfg","web_sys_unstable_apis"],"metadata":14564035643000669268,"config":2202906307356721367,"compile_kind":0}
