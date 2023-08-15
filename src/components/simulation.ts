@@ -3,6 +3,8 @@ import { Runner, State } from '../main'
 import { App } from './app'
 
 import closeURL from '/public/close.svg'
+import settingsURL from '/public/settings.svg'
+import homeURL from '/public/home.svg'
 
 export class Simulation extends App{
 
@@ -63,8 +65,8 @@ export class Simulation extends App{
     private initCollapsedButtons(): HTMLDivElement{
       let container = document.createElement("div")
       container.className = "settings-buttons"
-      container.appendChild(this.createSVGButton("public/vite.svg","settings", () => this.expansionButtonHandler()))
-      container.appendChild(this.createSVGButton("public/home.svg","settings", () => this.runner.returnHome()))
+      container.appendChild(this.createSVGButton(settingsURL, "settings", () => this.expansionButtonHandler()))
+      container.appendChild(this.createSVGButton(homeURL, "settings", () => this.runner.returnHome()))
       return container;
     }
   
