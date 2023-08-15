@@ -151,6 +151,7 @@ window.onload = async () => {
     try{
       await init()
       let t = await test_compatibility()
+      console.log(t)
       if (!t){
         alert("Your browser is incompatible with this website. Currently, only the newest versions of edge and chrome for desktop work with web gpu")
       }else{
