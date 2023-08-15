@@ -61,15 +61,15 @@ export class Simulation extends App{
     private initCollapsedButtons(): HTMLDivElement{
       let container = document.createElement("div")
       container.className = "settings-buttons"
-      container.appendChild(this.createSVGButton("./src/assets/settings.svg","settings", () => this.expansionButtonHandler()))
-      container.appendChild(this.createSVGButton("./src/assets/home.svg","settings", () => this.runner.returnHome()))
+      container.appendChild(this.createSVGButton("../assets/settings.svg","settings", () => this.expansionButtonHandler()))
+      container.appendChild(this.createSVGButton("../assets/home.svg","settings", () => this.runner.returnHome()))
       return container;
     }
   
     private initPanel(state: State): HTMLDivElement{
       let panel = document.createElement("div")
       panel.className = "panel"
-      panel.appendChild(this.createSVGButton("./src/assets/close.svg", "collapse", () => this.expansionButtonHandler()))
+      panel.appendChild(this.createSVGButton("../assets/close.svg", "collapse", () => this.expansionButtonHandler()))
       panel.appendChild(this.createLabeledRow("Color Map", "dropdown-row", this.initColorMapSelector(state.color)))
       panel.appendChild(this.createLabeledRow("Draw Type", "dropdown-row", this.initClickTypeSelector(state.clickType)))
       panel.appendChild(this.createLabeledRow("Output Data", "dropdown-row", this.initOutputSelector(state.summary)))
