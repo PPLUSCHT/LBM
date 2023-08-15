@@ -148,13 +148,14 @@ window.onload = async () => {
     afterLoadCheck()
     resizeRefresh()
   } else{
-    await init()
-    let t = await test_compatibility()
-    if (!t){
-      alert("Your browser is incompatible with this website. Currently, only the newest versions of edge and chrome for desktop work with web gpu")
-    }else{
+    try{
+      await init()
+      let t = await test_compatibility()
       window.setTimeout(afterLoadCheck, 200)
       window.setTimeout(resizeRefresh, 200)
+    }
+    catch{
+      alert("Your browser is incompatible with this website. Currently, only the newest versions of edge and chrome for desktop work with web gpu")
     }
   }
 }
