@@ -43,7 +43,6 @@ impl Driver{
     }
 
     pub async fn test_compatibility(window: &winit::window::Window) -> bool{
-    
         let size = window.inner_size();
 
         let instance = wgpu::Instance::default();
@@ -57,22 +56,6 @@ impl Driver{
                 })
                 .await
                 .expect("Failed to find an appropriate adapter");
-
-    // Create the logical device and command queue
-         match adapter
-                .request_device(
-                    &wgpu::DeviceDescriptor {
-                        label: None,
-                        features: wgpu::Features::default(),
-                        // features: wgpu::2Features::empty(),
-                        // Make sure we use the texture resolution limits from the adapter, so we can support images the size of the swapchain.
-                        limits: wgpu::Limits::default(),
-                    },
-                    None,
-                )
-                .await{
-                Err(_) => false,
-                Ok(_) => true
-        }
+        adapter.get_info().backend != wgpu::Backend::Empty 
     }
 }
