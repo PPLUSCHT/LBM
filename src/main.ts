@@ -171,8 +171,13 @@ window.onload = async () => {
 }
 
 window.onunhandledrejection = function(event){
-  console.log(`wasdasfdsf`);
   if(!event.reason.toString().includes("don't mind me")){
+    _runner.setInvalid()
+  }
+}
+
+window.onerror = function(event){
+  if(!(<string>event).includes("don't mind me")){
     _runner.setInvalid()
   }
 }
