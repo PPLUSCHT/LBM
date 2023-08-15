@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=wayland_protocols
+cargo:rustc-cfg=wasm_platform

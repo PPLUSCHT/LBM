@@ -1,4 +1,4 @@
-import init, {run, Resolution, WASMInteraction, ClickType, ColorMap, SummaryStat, FluidPreset, BarrierPreset} from 'lbm-wgpu'
+import init, {run, Resolution, WASMInteraction, ClickType, ColorMap, SummaryStat, FluidPreset, BarrierPreset} from '../../lbm-wgpu/pkg'
 import { Runner, State } from '../main'
 import { App } from './app'
 

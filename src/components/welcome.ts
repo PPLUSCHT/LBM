@@ -1,5 +1,5 @@
 import { Runner } from "../main"
-import init, {run, Resolution, WASMInteraction, SummaryStat, ColorMap, BarrierPreset} from 'lbm-wgpu'
+import init, {run, Resolution, WASMInteraction, SummaryStat, ColorMap, BarrierPreset} from '../../lbm-wgpu/pkg'
 import { App } from "./app"
 
 export class WelcomePage extends App{

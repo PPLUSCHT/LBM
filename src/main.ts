@@ -1,5 +1,5 @@
-import init, {Resolution, ClickType, ColorMap, SummaryStat} from 'lbm-wgpu'
-import test_compatibility from 'lbm-wgpu'
+import init, {Resolution, ClickType, ColorMap, SummaryStat} from '../lbm-wgpu/pkg'
+import test_compatibility from '../lbm-wgpu/pkg'
 import { WelcomePage } from './components/welcome';
 import { Simulation } from './components/simulation';
 import { Tutorial } from './components/tutorial';

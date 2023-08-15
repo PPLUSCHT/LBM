@@ -1,5 +1,5 @@
 import { Runner, State, startingState } from "../main"
-import init, {run, Resolution, WASMInteraction, FluidPreset, SummaryStat, BarrierPreset} from 'lbm-wgpu'
+import init, {run, Resolution, WASMInteraction, FluidPreset, SummaryStat, BarrierPreset} from '../../lbm-wgpu/pkg'
 import { App } from "./app"
 import { Simulation } from "./simulation"
 
