@@ -10,7 +10,7 @@ export class WelcomePage extends App{
         .then(() => {
             this.updateWASMState()
             this.initWelcomeButtons()
-            run(window.devicePixelRatio, Resolution.HD, window.innerWidth, window.innerHeight)
+            run(window.devicePixelRatio, Resolution.NHD, window.innerWidth, window.innerHeight)
         })
     }
 
