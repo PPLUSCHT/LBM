@@ -1,1 +1,0 @@
-{"rustc":4041371938568725036,"features":"[]","target":14886237245231788030,"profile":8626402512162920248,"path":12023310221848373775,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/autocfg-3936825b0293837c/dep-lib-autocfg"}}],"rustflags":["--cfg","web_sys_unstable_apis"],"metadata":13102859075309379048,"config":2202906307356721367,"compile_kind":0}
