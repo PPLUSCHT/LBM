@@ -128,12 +128,12 @@ const startingLocation = {
 }
 
 
-var runner: Runner;
+var _runner: Runner;
 
 function afterLoadCheck(){
   let initialState = sessionStorage.getItem("state") === null ?  startingState : JSON.parse(sessionStorage.getItem("state")!)
   let initialLocation = sessionStorage.getItem("currentLocation") === null ?  startingLocation : JSON.parse(sessionStorage.getItem("currentLocation")!)
-  runner = new Runner(initialState, initialLocation);
+  _runner = new Runner(initialState, initialLocation);
 }
 
 function resizeRefresh(){

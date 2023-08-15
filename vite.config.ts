@@ -5,4 +5,5 @@ export default defineConfig({
   plugins: [
     wasmPack('/Users/pluscht/Desktop/LanguageResources/Rust/lbm-wgpu')
   ],
+  base: '/LBM/'
 })
