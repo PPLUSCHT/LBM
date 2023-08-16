@@ -158,15 +158,37 @@ function resizeRefresh(){
   })
 }
 
+async function testGPU(): Promise<boolean>{
+  if (!navigator.gpu){
+    return false
+  }else{
+    let adapter = await navigator.gpu.requestAdapter();
+    if (!adapter) {
+      return false
+    }
+    return true
+  }
+}
+
 window.onload = async () => {
+  console.log(navigator)
   let loaded:boolean = sessionStorage.getItem("loaded") ?  true : false
   console.log(`loaded: ${loaded}`)
   if (loaded == true){
     afterLoadCheck()
     resizeRefresh()
   } else{
-      window.setTimeout(afterLoadCheck, 200)
-      window.setTimeout(resizeRefresh, 200)
+      console.log(`GPU test: ${await testGPU()}`)
+      if(await testGPU()){
+        window.setTimeout(afterLoadCheck, 200)
+        window.setTimeout(resizeRefresh, 200)
+      }
+      else{
+        let initialState = sessionStorage.getItem("state") === null ?  startingState : JSON.parse(sessionStorage.getItem("state")!)
+        let initialLocation = sessionStorage.getItem("currentLocation") === null ?  startingLocation : JSON.parse(sessionStorage.getItem("currentLocation")!)
+        _runner = new Runner(initialState, initialLocation);
+        _runner.setInvalid()
+      }
   }
 }
 
