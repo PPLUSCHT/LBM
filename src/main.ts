@@ -159,9 +159,11 @@ function resizeRefresh(){
 }
 
 async function testGPU(): Promise<boolean>{
+  //@ts-ignore
   if (!navigator.gpu){
     return false
   }else{
+    //@ts-ignore
     let adapter = await navigator.gpu.requestAdapter();
     if (!adapter) {
       return false
