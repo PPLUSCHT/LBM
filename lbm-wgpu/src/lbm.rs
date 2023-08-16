@@ -1486,7 +1486,7 @@ impl LBM{
         match index {
             0 => vec[0][self.index((self.x - 2) as usize, (self.y - 2) as usize)] = 4.0,
             1 => vec[1][self.index((3 * self.x/4) as usize, (self.y - 2) as usize)] = 4.0,
-            2 => vec[2][self.index((self.x/2) as usize, (self.y - 2) as usize)] = 4.0,
+            2 => vec[2][self.index((self.x/3) as usize, (self.y - 2) as usize)] = 4.0,
             3 => vec[3][self.index((self.x - 2) as usize, (self.y/2) as usize)] = 4.0,
             4 => vec[4][self.index((3 * self.x/4) as usize, (self.y/2) as usize)] = 4.0,
             5 => vec[5][self.index((self.x/2) as usize, (self.y/2) as usize)] = 4.0,
