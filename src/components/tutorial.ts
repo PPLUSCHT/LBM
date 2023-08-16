@@ -725,7 +725,9 @@ let element6 = (): HTMLElement => {
                     If you ever see this result in your own simulation, 
                     reset the fluid to restore normal conditions. 
                     High fluid speeds, low viscosities, and large
-                    cell counts increase the probability of this occurring.`
+                    cell counts increase the probability of this occurring. NOTICE: 
+                    the controls in this simulation are set in such a way that it is very easy to 
+                    break the simulation.`
     container.appendChild(p1)
     return container
 }
